@@ -1,9 +1,11 @@
+from typing import List
+
 class Grafo:
     """Classe que encapsula todos os dados necessários de um grafo.
        Possui as matrizes de adjacências e de incidência, o número
        de vértices e de arestas, e uma lista com o grau de cada
        vértice."""
-    def __init__(self, mat_adj: list[list[int]], direcionado: bool):
+    def __init__(self, mat_adj: List[List[int]], direcionado: bool):
         self.mat_adj        = mat_adj
         self.mat_incid      = self.adj_para_incid(mat_adj)
         self.num_vertices   = len(mat_adj)
@@ -11,7 +13,7 @@ class Grafo:
         self.lista_de_graus = self.calcular_grau(mat_adj)
         self.direcionado    = direcionado
     
-    def adj_para_incid(self, adjacencias) -> list[list[int]]:
+    def adj_para_incid(self, adjacencias) -> List[List[int]]:
         # Populando a nova matriz com zeros
         incidencia = []
         for _ in range(self.num_vertices):
@@ -42,9 +44,9 @@ class Grafo:
                     indice_aresta += 1
         return incidencia
 
-    def contar_arestas(self, adjacencias: list[list[int]]) -> int:
+    def contar_arestas(self, adjacencias: List[List[int]]) -> int:
         pass
 
-    def calcular_grau(self, adjacencias: list[list[int]]) -> list[int]:
+    def calcular_grau(self, adjacencias: List[List[int]]) -> List[int]:
         pass
 
