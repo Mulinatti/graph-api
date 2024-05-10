@@ -83,7 +83,7 @@ print(graph.num_vertices) #Output = 3
 
 <p style="font-weight: 500; font-size: 1.25rem; text-decoration: underline;">Atributos</p>
 
-`lista_de_graus[Vertice]`: Lista de inteiros que armazena o grau de cada vértice do grafo.
+`lista_de_graus[Vertice]`: Lista de dados da classe `Vertice` que armazena o grau de cada vértice do grafo.
 
 <p style="font-weight: 500; font-size: 1.25rem; text-decoration: underline;">Métodos</p>
 
