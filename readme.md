@@ -12,7 +12,7 @@
 
 ## Passo a passo para inicializar o projeto
 
-### <div style="display: flex; align-items: center"><img width=35 src="https://skillicons.dev/icons?i=windows" /><p style="margin: 0; margin-left: 10px">Windows</p><p style="margin: 0 10px">+</p><img width=35 src="https://skillicons.dev/icons?i=vscode" /><p style="margin: 0; margin-left: 10px">Visual Studio Code</p></div>
+### <div style="width: 100%; display: flex; align-items: center"><img width=35 src="https://skillicons.dev/icons?i=windows" /><p style="margin: 0; margin-left: 10px">Windows</p><p style="margin: 0 10px">+</p><img width=35 src="https://skillicons.dev/icons?i=vscode" /><p style="margin: 0; margin-left: 10px">Visual Studio Code</p></div>
 
 <br>
 
