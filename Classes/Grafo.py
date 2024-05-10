@@ -1,4 +1,4 @@
-from GrafoAbstrato import GrafoAbstrato
+from Classes.GrafoAbstrato import GrafoAbstrato
 from typing import List # para disponibilizar List para anotações de tipo
 
 class Grafo(GrafoAbstrato):
