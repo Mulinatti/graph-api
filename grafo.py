@@ -3,7 +3,7 @@ from typing import List
 from dataclasses import dataclass
 
 class GrafoAbstrato(ABC):
-    """Classe abstrata com todos as funcionalidades comuns aos
+    """Classe abstrata com todas as funcionalidades comuns aos
        dois tipos de grafos modelados: grafo e digrafo (grafo
        dirigido)"""
     def __init__(self, mat_adj: List[List[int]]):
@@ -68,10 +68,11 @@ class Vertice:
 
 class Digrafo(GrafoAbstrato):
     """Classe que encapsula os dados necessário para modelar
-       um grafo direcionado."""
+       um grafo direcionado, e possui uma lista de vértices,
+       que armazenam seus graus."""
     def __init__(self, mat_adj: List[List[int]]):
         super().__init__(mat_adj)
-        self.lista_graus = self.calcular_graus(mat_adj)
+        self.lista_de_graus = self.calcular_graus(mat_adj)
     
     def adj_para_incid(self, adjacencias: List[List[int]]):
         # Zerando a matriz de incidência.
