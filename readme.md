@@ -1,6 +1,6 @@
 # BACK-END PROJETO ALGORITMOS EM GRAFOS
 
-### Este repositório Back-end consiste em uma API para prover os dados para serem usados no Front-end (Parte de integraçao dos módulos).
+<h2>Este repositório Back-end consiste em uma API para prover os dados para serem usados no Front-end (Parte de integraçao dos módulos).</h2>
 
 ## Requisitos ⚠️
 
