@@ -1,6 +1,6 @@
 # BACK-END PROJETO ALGORITMOS EM GRAFOS
 
-<h2>Este repositório Back-end consiste em uma API para prover os dados para serem usados no Front-end (Parte de integraçao dos módulos).</h2>
+<p>Este repositório Back-end consiste em uma API para prover os dados para serem usados no Front-end (Parte de integraçao dos módulos).</p>
 
 ## Requisitos ⚠️
 
@@ -12,7 +12,7 @@
 
 ## Passo a passo para inicializar o projeto
 
-<div style="width: 100%; display: flex; align-items: center"><img width=35 src="https://skillicons.dev/icons?i=vscode" /><p style="margin: 0; margin-left: 10px">Visual Studio Code</p></div>
+<div style="width: 100%; display: flex; align-items: center"><img width=35 src="https://skillicons.dev/icons?i=vscode" /><p style="margin: 0; margin-left: 10px; font-weight: 500">Visual Studio Code</p></div>
 
 <br>
 
@@ -29,7 +29,7 @@ fastapi dev main.py
 
 Após isso aparecerá algumas informações dizendo onde foi inicializado o servidor localmente.
 
-![alt text](image.png)
+![alt text](./readmeUtils/localhost.png)
 
  Utilize <kbd>ctrl</kbd> + <kbd>right click</kbd> em `http://127.0.0.1:8000` ou `http://127.0.0.1:8000/docs` para ser direcionado para documentação da **API**,
 
