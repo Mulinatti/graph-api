@@ -34,4 +34,19 @@ class Grafo(GrafoAbstrato):
         pass
 
     def calcular_graus(self, adjacencias: List[List[int]]) -> List[int]:
-        pass
+        soma_graus = []
+        # Para armazenar temporariamente o valor do grau durante as iterações
+        aux = 0
+        for i in range(len(adjacencias)):
+            # Para impedir que a lista dê out of bounds.
+            if i >= len(adjacencias[i]):
+                break
+            for j in range(len(adjacencias)):
+                # Para pegar os valores verticalmente, ao invês de horizontalmente
+                aux += adjacencias[j][i]
+            # Adicionando o valor a lista
+            soma_graus.append(aux)
+            # Zerando o valor auxiliar antes da próxima iteração
+            aux = 0
+        return soma_graus
+
