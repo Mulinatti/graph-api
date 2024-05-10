@@ -1,6 +1,6 @@
 # BACK-END PROJETO ALGORITMOS EM GRAFOS
 
-### Este repositório Back-end consiste em uma API para prover os dados para serem usados no Front-end (Parte de integraçao dos módulos).
+<h2>Este repositório Back-end consiste em uma API para prover os dados para serem usados no Front-end (Parte de integraçao dos módulos).</h2>
 
 ## Requisitos ⚠️
 
@@ -12,7 +12,7 @@
 
 ## Passo a passo para inicializar o projeto
 
-### <div style="width: 100%; display: flex; align-items: center"><img width=35 src="https://skillicons.dev/icons?i=windows" /><p style="margin: 0; margin-left: 10px">Windows</p><p style="margin: 0 10px">+</p><img width=35 src="https://skillicons.dev/icons?i=vscode" /><p style="margin: 0; margin-left: 10px">Visual Studio Code</p></div>
+<div style="width: 100%; display: flex; align-items: center"><img width=35 src="https://skillicons.dev/icons?i=vscode" /><p style="margin: 0; margin-left: 10px">Visual Studio Code</p></div>
 
 <br>
 
