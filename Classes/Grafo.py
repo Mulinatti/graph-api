@@ -39,7 +39,7 @@ class Grafo(GrafoAbstrato):
                 
                 for j in range(i+1, self.num_vertices):
                     if adjacencias[j][i] > 0:
-                        for valor in range(adjacencias[j][i]):
+                        for _ in range(adjacencias[j][i]):
                             incidencia[i][indice_aresta] += 1
                             incidencia[j][indice_aresta] += 1
                             indice_aresta += 1
