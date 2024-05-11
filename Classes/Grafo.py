@@ -4,11 +4,12 @@ from typing import List # para disponibilizar List para anotações de tipo
 class Grafo(GrafoAbstrato):
     """Classe que encapsula todos os dados necessários de um grafo.
        Possui as matrizes de adjacências e de incidência, o número
-       de vértices e de arestas, e uma lista com o grau de cada
-       vértice."""
-    def __init__(self, mat_adj: List[List[int]]):
+       de vértices e de arestas, uma lista com o grau de cada
+       vértice, e se é valorado ou não."""
+    def __init__(self, mat_adj: List[List[int]], valorado: bool):
         super().__init__(mat_adj)
         self.lista_de_graus = self.calcular_graus(mat_adj)
+        self.valorado = valorado
     
     def adj_para_incid(self, adjacencias) -> List[List[int]]:
         # Populando a nova matriz com zeros
