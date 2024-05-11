@@ -18,17 +18,31 @@ class Grafo(GrafoAbstrato):
             incidencia.append([0] * self.num_arestas)
         
         indice_aresta = 0
-        for i in range(self.num_vertices):
-            # Laços
-            if adjacencias[i][i] != 0:
-                incidencia[i][indice_aresta] += adjacencias[i][i]
-                indice_aresta += 1
-            
-            for j in range(i+1, self.num_vertices):
-                if adjacencias[j][i] != 0:
-                    incidencia[i][indice_aresta] += adjacencias[j][i]
-                    incidencia[j][indice_aresta] += adjacencias[j][i]
+        if self.valorado:
+            for i in range(self.num_vertices):
+                # Lidando com laços
+                if adjacencias[i][i] != 0:
+                    incidencia[i][indice_aresta] += adjacencias[i][i]
                     indice_aresta += 1
+                
+                for j in range(i+i, self.num_vertices):
+                    if adjacencias[j][i] > 0:
+                        incidencia[i][indice_aresta] += adjacencias[j][i]
+                        incidencia[j][indice_aresta] += adjacencias[j][i]
+                        indice_aresta += 1
+        else:
+            for i in range(self.num_vertices):
+                # Lidando com laços
+                if adjacencias[i][i] != 0:
+                    incidencia[i][indice_aresta] += adjacencias[i][i]
+                    indice_aresta += 1
+                
+                for j in range(i+1, self.num_vertices):
+                    if adjacencias[j][i] > 0:
+                        for valor in range(adjacencias[j][i]):
+                            incidencia[i][indice_aresta] += 1
+                            incidencia[j][indice_aresta] += 1
+                            indice_aresta += 1
         return incidencia
 
     def contar_arestas(self, adjacencias: List[List[int]]) -> int:
