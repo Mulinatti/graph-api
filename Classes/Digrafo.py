@@ -17,11 +17,16 @@ class Digrafo(GrafoAbstrato):
         
         indice_aresta = 0
         for i in range(self.num_vertices):
-            for j in range(i+1, self.num_vertices):
-                if adjacencias[i][j] != 0:
-                    incidencia[i][indice_aresta] += adjacencias[i][j]
-                    incidencia[j][indice_aresta] -= adjacencias[i][j]
-                    indice_aresta += 1
+            if adjacencias[i][i] > 0:
+                incidencia[i][indice_aresta] = 0
+                indice_aresta += 1
+            
+            for j in range(self.num_vertices):
+                if adjacencias[i][j] > 0 and i != j:
+                    for _ in range(adjacencias[i][j]):
+                        incidencia[i][indice_aresta] = 1
+                        incidencia[j][indice_aresta] = -1
+                        indice_aresta += 1
         
         return incidencia
     
