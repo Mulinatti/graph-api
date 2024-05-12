@@ -38,12 +38,9 @@ class Grafo(GrafoAbstrato):
         # Para armazenar temporariamente o valor do grau durante as iterações
         aux = 0
         for i in range(len(adjacencias)):
-            # Para impedir que a lista dê out of bounds.
-            if i >= len(adjacencias[i]):
-                break
             for j in range(len(adjacencias)):
-                # Para pegar os valores verticalmente, ao invês de horizontalmente
-                aux += adjacencias[j][i]
+                # Para pegar os valores da lista
+                aux += adjacencias[i][j]
             # Adicionando o valor a lista
             soma_graus.append(aux)
             # Zerando o valor auxiliar antes da próxima iteração
