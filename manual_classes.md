@@ -49,7 +49,8 @@
 
 <p style="font-weight: 500; font-size: 1.25rem; text-decoration: underline;">Atributos</p>
 
-`lista_de_graus[int]`: Lista de inteiros que armazena o grau de cada vértice do grafo.
+`lista_de_graus[int]`: Lista de inteiros que armazena o grau de cada vértice do grafo. <br>
+`valorado: bool`: Diz se o grafo é valorado ou não.
 
 
 <p style="font-weight: 500; font-size: 1.25rem; text-decoration: underline;">Métodos</p>
@@ -67,7 +68,7 @@ matrix = [
 ]
 
 #instacia da classe grafo
-graph = Grafo(matrix)
+graph = Grafo(matrix, valorado=False)
 
 print(graph.num_vertices) #Output = 3
 ```
