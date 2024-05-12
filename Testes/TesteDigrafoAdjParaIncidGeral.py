@@ -6,8 +6,8 @@ class TesteDigrafoAdjParaIncidGeral(unittest.TestCase):
     def setUpClass(self):
         self.matriz1 = [
             [0, 1, 1],
-            [-1, 0, 0],
-            [-1, 0, 0]
+            [0, 0, 0],
+            [0, 0, 0]
         ]
         self.resultado1 = [
             [1, 1],

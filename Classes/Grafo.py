@@ -53,6 +53,7 @@ class Grafo(GrafoAbstrato):
                     num_arestas += adjacencias[i][j]
         return num_arestas
 
+    # Meu Deus...
     def contar_vertices(self, mat_adj: List[List[int]]) -> int:
         return len(mat_adj)
 
