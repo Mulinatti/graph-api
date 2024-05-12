@@ -46,7 +46,14 @@ class Grafo(GrafoAbstrato):
         return incidencia
 
     def contar_arestas(self, adjacencias: List[List[int]]) -> int:
-        pass
+        num_arestas = 0
+        for i in range(len(adjacencias)):
+            for j in range(len(adjacencias)): 
+                num_arestas += adjacencias[i][j]
+        return num_arestas
+
+    def contar_vertices(self, mat_adj: List[List[int]]) -> int:
+        return len(mat_adj)
 
     def calcular_graus(self, adjacencias: List[List[int]]) -> List[int]:
         soma_graus = []
