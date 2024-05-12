@@ -17,16 +17,29 @@ class Digrafo(GrafoAbstrato):
         
         indice_aresta = 0
         for i in range(self.num_vertices):
-            for j in range(i+1, self.num_vertices):
-                if adjacencias[i][j] != 0:
-                    incidencia[i][indice_aresta] += adjacencias[i][j]
-                    incidencia[j][indice_aresta] -= adjacencias[i][j]
-                    indice_aresta += 1
+            if adjacencias[i][i] > 0:
+                incidencia[i][indice_aresta] = 0
+                indice_aresta += 1
+            
+            for j in range(self.num_vertices):
+                if adjacencias[i][j] > 0 and i != j:
+                    for _ in range(adjacencias[i][j]):
+                        incidencia[i][indice_aresta] = 1
+                        incidencia[j][indice_aresta] = -1
+                        indice_aresta += 1
         
         return incidencia
     
     def contar_arestas(self, adjacencias: List[List[int]]):
-        pass
+        num_arestas = 0
+        for i in range(len(adjacencias)):
+            for j in range(i, len(adjacencias)):
+                if i <= j:  
+                    num_arestas += abs(adjacencias[i][j])
+        return num_arestas   
+    
+    def contar_vertices(self, mat_adj: List[List[int]]) -> int:
+        return len(mat_adj)
     
     def calcular_graus(self, adjacencias: List[List[int]]):
         soma_graus = []
