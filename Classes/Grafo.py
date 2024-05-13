@@ -1,5 +1,5 @@
 from Classes.GrafoAbstrato import GrafoAbstrato
-from typing import List # para disponibilizar List para anotações de tipo
+from typing import List # para disponibilizar List para anotações de tipos
 
 class Grafo(GrafoAbstrato):
     """Classe que encapsula todos os dados necessários de um grafo.
