@@ -92,6 +92,14 @@ class TestContarArestas(unittest.TestCase):
                [0, 1, 1],
                [2, 1, 0]
           ]), 5)
+     
+     def test_11(self):
+         """Testar um digrafo valorado."""
+         self.assertEqual(contar_arestas([
+             [0, 5, 0],
+             [0, 0, 10],
+             [0, 0, 0]
+         ], True, True), 2)
 
 if __name__ == '__main__':
      unittest.main(verbosity=2)
