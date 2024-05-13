@@ -13,15 +13,12 @@ def calcular_graus(adjacencias: List[List[int]], digrafo: bool) -> List[int]:
         # antes deles serem anexados aos totais
         entrada, saida = 0, 0
         for i in range(len(adjacencias)):
-            # Para impedir a lista de ir out of bounds
-            if i >= len(adjacencias[i]):
-                break
             for j in range(len(adjacencias)):
                 # Adicionando os valores negativos na variável entrada e os potivos na variável saida
-                if adjacencias[j][i] < 0:
-                    entrada += adjacencias[j][i]
+                if adjacencias[i][j] < 0:
+                    entrada += adjacencias[i][j]
                 else:
-                    saida += adjacencias[j][i]
+                    saida += adjacencias[i][j]
             total_entrada.append(entrada)
             total_saida.append(saida)
             # Reiniciando os valores auxiliares antes da próxima iteração
@@ -36,17 +33,14 @@ def calcular_graus(adjacencias: List[List[int]], digrafo: bool) -> List[int]:
         return soma_graus
 
     soma_graus = []
-        # Para armazenar temporariamente o valor do grau durante as iterações
+    # Para armazenar temporariamente o valor do grau durante as iterações
     aux = 0
     for i in range(len(adjacencias)):
-            # Para impedir que a lista dê out of bounds.
-        if i >= len(adjacencias[i]):
-            break
         for j in range(len(adjacencias)):
-                # Para pegar os valores verticalmente, ao invês de horizontalmente
-            aux += adjacencias[j][i]
+            # Para pegar os valores
+            aux += adjacencias[i][j]
             # Adicionando o valor a lista
         soma_graus.append(aux)
-            # Zerando o valor auxiliar antes da próxima iteração
+        # Zerando o valor auxiliar antes da próxima iteração
         aux = 0
     return soma_graus
