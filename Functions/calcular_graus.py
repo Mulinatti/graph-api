@@ -1,7 +1,6 @@
-from typing import List
 from Vertice import Vertice
 
-def calcular_graus(adjacencias: List[List[int]], digrafo: bool) -> List[int]:
+def calcular_graus(adjacencias: list[list[int]], digrafo: bool) -> list[int]:
     soma_graus = []
 
     if digrafo:
