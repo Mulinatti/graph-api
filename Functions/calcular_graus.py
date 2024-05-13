@@ -1,6 +1,9 @@
 from Vertice import Vertice
 
-def calcular_graus(adjacencias: list[list[int]], digrafo: bool) -> list[int]:
+# Uma matriz é uma lista de listas de inteiros
+type Matriz = list[list[int]]
+
+def calcular_graus(adjacencias: Matriz, digrafo: bool) -> list[int]:
     soma_graus = []
 
     if digrafo:
@@ -43,3 +46,7 @@ def calcular_graus(adjacencias: list[list[int]], digrafo: bool) -> list[int]:
         # Zerando o valor auxiliar antes da próxima iteração
         aux = 0
     return soma_graus
+
+
+if __name__ == '__main__':
+    print("Deu certo")

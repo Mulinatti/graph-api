@@ -1,6 +1,9 @@
 import unittest
 
-def contar_arestas(adjacencias: list[list[int]]) -> int:
+# Uma matriz é uma lista de listas de inteiros
+type Matriz = list[list[int]]
+
+def contar_arestas(adjacencias: Matriz) -> int:
         num_arestas = 0
         for i in range(len(adjacencias)):
             for j in range(i, len(adjacencias)):
