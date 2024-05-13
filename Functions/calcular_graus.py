@@ -143,9 +143,4 @@ class TestAdjParaIncid(unittest.TestCase):
 
 
 if __name__ == '__main__':
-     print(calcular_graus([
-             [0, 5, 0],
-             [0, 0, 10],
-             [0, 0, 0]
-         ], True))
-     #unittest.main()
+     unittest.main()
