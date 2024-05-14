@@ -1,10 +1,7 @@
 from Vertice import Vertice
 import unittest
 
-# Uma matriz é uma lista de listas de inteiros
-type Matriz = list[list[int]]
-
-def calcular_graus(adjacencias: Matriz, digrafo: bool) -> list[int]:
+def calcular_graus(adjacencias: list[list[int]], digrafo: bool) -> list[int]:
     soma_graus = []
 
     if digrafo:
