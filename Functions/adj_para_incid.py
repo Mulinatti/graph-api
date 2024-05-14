@@ -1,9 +1,6 @@
 import unittest
 
-# Uma matriz é uma lista de listas de inteiros
-type Matriz = list[list[int]]
-
-def adj_para_incid(adj: Matriz, digrafo: bool, valorado: bool, num_arestas: int):
+def adj_para_incid(adj, digrafo: bool, valorado: bool, num_arestas: int):
     # Populando a nova matriz com zeros
     incid = []
     for _ in range(len(adj)):
