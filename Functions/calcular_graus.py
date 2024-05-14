@@ -112,7 +112,7 @@ class TestAdjParaIncid(unittest.TestCase):
                [0, 0, 0, 0],
                [0, 1, 0, 0],
                [0, 0, 1, 0]
-          ], True), [Vertice(0, 1, 1), Vertice(2, 0, 2), Vertice(1, 0, 1), Vertice(0, 1, 1)])
+          ], True), [Vertice(1, 2, 1), Vertice(2, 0, 2), Vertice(1, 1, 0), Vertice(0, 1, 1)])
      
      def test_8(self):
           """Testar um digrafo com aresta dupla."""
@@ -137,7 +137,7 @@ class TestAdjParaIncid(unittest.TestCase):
                [0, 0, 0],
                [0, 1, 1],
                [2, 1, 0]
-          ], True), [Vertice(2, 0, 2), Vertice(1, 1, 0), Vertice(1, 3, 2)])
+          ], True), [Vertice(2, 0, 2), Vertice(2, 2, 0), Vertice(1, 3, 2)])
     
      def test_11(self):
          """Testar um digrafo valorado."""
