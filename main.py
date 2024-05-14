@@ -19,17 +19,38 @@ app.add_middleware(
 )
 
 
+#Tipo de objeto a ser recebido na requisição
+class Request(BaseModel):
+  matriz: List[List[int]]
+  valorado: bool
+
+
+#CRIAÇAO DAS ROTAS - Tudo que será retornado para o front-end.
 @app.get("/")
 def read_root():
   return {"message": "api root"}
 
 @app.post("/grafo")
-async def get_grafo(grafo: List[List]):
+async def get_grafo(grafo: Request):
   res = {
-    "num_vertices": len(grafo),
-    "num_arestas": contar_arestas(grafo),
-    "graus_vertices": calcular_graus(grafo, False),
-    "matriz_incidencia": adj_para_incid(grafo, False, False, contar_arestas(grafo))
+    "matriz_adjacencia": grafo.matriz,
+    "num_vertices": len(grafo.matriz),
+    "num_arestas": contar_arestas(grafo.matriz, False, grafo.valorado),
+    "graus_vertices": calcular_graus(grafo.matriz, False),
+    "matriz_incidencia": adj_para_incid(grafo.matriz, False, grafo.valorado, contar_arestas(grafo.matriz, False, grafo.valorado))
+  }
+  
+  return res
+
+
+@app.post("/digrafo")
+async def get_grafo(digrafo: Request):
+  res = {
+    "matriz_adjacencia": digrafo.matriz,
+    "num_vertices": len(digrafo.matriz),
+    "num_arestas": contar_arestas(digrafo.matriz, True, digrafo.valorado),
+    "graus_vertices": calcular_graus(digrafo.matriz, True),
+    "matriz_incidencia": adj_para_incid(digrafo.matriz, True, False, contar_arestas(digrafo.matriz, True, digrafo.valorado))
   }
   
   return res
