@@ -1,40 +1,25 @@
 from Vertice import Vertice
 import unittest
 
-def calcular_graus(adjacencias: list[list[int]], digrafo: bool) -> list[int]:
-    soma_graus = []
-
+def calcular_graus(adjacencias, digrafo: bool):
     if digrafo:
-        # Para armazenar os graus de entrada totais
-        total_entrada = []
-        # Para armazenar os graus de saída totais
-        total_saida = []
-        # Para armazenar temporariamente os valores de entrada e saída
-        # antes deles serem anexados aos totais
-        entrada, saida = 0, 0
+        # Populando a lista com vértices zerados
+        lista_vertices = [Vertice(0, 0, 0) for _ in range(len(adjacencias))]
+        
+        # Percorrendo a matriz linha por linha
         for i in range(len(adjacencias)):
-            # Para impedir a lista de ir out of bounds
-            if i >= len(adjacencias[i]):
-                break
-            for j in range(len(adjacencias)):
-                # Adicionando os valores negativos na variável entrada e os potivos na variável saida
-                if adjacencias[j][i] < 0:
-                    entrada += adjacencias[j][i]
-                else:
-                    saida += adjacencias[j][i]
-            total_entrada.append(entrada)
-            total_saida.append(saida)
-            # Reiniciando os valores auxiliares antes da próxima iteração
-            entrada, saida = 0, 0
-        for i in range(len(total_saida)):
-            # Calculando o Grau total da vértice
-            total = total_entrada[i] + total_saida[i]
-            # Iterando o objeto Vertice usando os valores adquiridos previamente
-            nome = Vertice(total_entrada[i], total_saida[i], total)
-            # Adicionando o objeto a lista
-            soma_graus.append(nome)
-        return soma_graus
-
+            for j in range(len(adjacencias[i])):
+                # Se o registro for maior que zero:
+                if adjacencias[i][j] > 0:
+                    # no vértice representado pela linha, adiciona o grau saída
+                    lista_vertices[i].grau_saida += adjacencias[i][j]
+                    # no vértice representado pela coluna, adiciona o grau grau entrada
+                    lista_vertices[j].grau_entrada += adjacencias[i][j]
+        # Calculando o total
+        for i in range(len(lista_vertices)):
+            lista_vertices[i].grau_total = abs(lista_vertices[i].grau_entrada - lista_vertices[i].grau_saida)
+        return lista_vertices
+    
     soma_graus = []
     # Para armazenar temporariamente o valor do grau durante as iterações
     aux = 0
