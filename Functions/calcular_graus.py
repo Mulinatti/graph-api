@@ -1,4 +1,4 @@
-from Vertice import Vertice
+from Functions.Vertice import Vertice
 import unittest
 
 def calcular_graus(adjacencias, digrafo: bool):

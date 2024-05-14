@@ -37,7 +37,7 @@ async def get_grafo(grafo: Request):
     "num_vertices": len(grafo.matriz),
     "num_arestas": contar_arestas(grafo.matriz, False, grafo.valorado),
     "graus_vertices": calcular_graus(grafo.matriz, False),
-    "matriz_incidencia": adj_para_incid(grafo.matriz, False, grafo.valorado, contar_arestas(grafo.matriz, False, grafo.valorado))
+    "matriz_incidencia": adj_para_incid(grafo.matriz, False, grafo.valorado)
   }
   
   return res
@@ -50,7 +50,7 @@ async def get_grafo(digrafo: Request):
     "num_vertices": len(digrafo.matriz),
     "num_arestas": contar_arestas(digrafo.matriz, True, digrafo.valorado),
     "graus_vertices": calcular_graus(digrafo.matriz, True),
-    "matriz_incidencia": adj_para_incid(digrafo.matriz, True, False, contar_arestas(digrafo.matriz, True, digrafo.valorado))
+    "matriz_incidencia": adj_para_incid(digrafo.matriz, True, False)
   }
   
   return res

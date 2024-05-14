@@ -1,7 +1,10 @@
 import unittest
+from Functions.contar_arestas import contar_arestas
 
-def adj_para_incid(adj, digrafo: bool, valorado: bool, num_arestas: int):
+def adj_para_incid(adj, digrafo: bool, valorado: bool):
     # Populando a nova matriz com zeros
+    num_arestas = contar_arestas(adj, digrafo, valorado)
+    
     incid = []
     for _ in range(len(adj)):
         incid.append([0] * num_arestas)
