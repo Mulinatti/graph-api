@@ -1,7 +1,7 @@
 from Vertice import Vertice
 import unittest
 
-def calcular_graus(adjacencias: list[list[int]], digrafo: bool) -> list[int]:
+def calcular_graus(incidencia: list[list[int]], digrafo: bool) -> list[int]:
     soma_graus = []
 
     if digrafo:
@@ -12,16 +12,16 @@ def calcular_graus(adjacencias: list[list[int]], digrafo: bool) -> list[int]:
         # Para armazenar temporariamente os valores de entrada e saída
         # antes deles serem anexados aos totais
         entrada, saida = 0, 0
-        for i in range(len(adjacencias)):
+        for i in range(len(incidencia)):
             # Para impedir a lista de ir out of bounds
-            if i >= len(adjacencias[i]):
+            if i >= len(incidencia[i]):
                 break
-            for j in range(len(adjacencias)):
+            for j in range(len(incidencia)):
                 # Adicionando os valores negativos na variável entrada e os potivos na variável saida
-                if adjacencias[j][i] < 0:
-                    entrada += adjacencias[j][i]
+                if incidencia[j][i] < 0:
+                    entrada += incidencia[j][i]
                 else:
-                    saida += adjacencias[j][i]
+                    saida += incidencia[j][i]
             total_entrada.append(entrada)
             total_saida.append(saida)
             # Reiniciando os valores auxiliares antes da próxima iteração
@@ -38,13 +38,13 @@ def calcular_graus(adjacencias: list[list[int]], digrafo: bool) -> list[int]:
     soma_graus = []
     # Para armazenar temporariamente o valor do grau durante as iterações
     aux = 0
-    for i in range(len(adjacencias)):
+    for i in range(len(incidencia)):
         # Para impedir que a lista dê out of bounds.
-        if i >= len(adjacencias[i]):
+        if i >= len(incidencia[i]):
             break
-        for j in range(len(adjacencias)):
+        for j in range(len(incidencia)):
             # Para pegar os valores verticalmente, ao invês de horizontalmente
-            aux += adjacencias[j][i]
+            aux += incidencia[j][i]
         # Adicionando o valor a lista
         soma_graus.append(aux)
         # Zerando o valor auxiliar antes da próxima iteração
