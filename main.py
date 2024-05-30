@@ -6,6 +6,8 @@ from typing import List
 from Functions.contar_arestas import contar_arestas
 from Functions.calcular_graus import calcular_graus
 from Functions.adj_para_incid import adj_para_incid
+from Functions.prim import prim
+from Functions.kruskal import kruskal
 
 app = FastAPI()
 
@@ -37,7 +39,9 @@ async def get_grafo(grafo: Request):
     "num_vertices": len(grafo.matriz),
     "num_arestas": contar_arestas(grafo.matriz, False, grafo.valorado),
     "graus_vertices": calcular_graus(grafo.matriz, False),
-    "matriz_incidencia": adj_para_incid(grafo.matriz, False, grafo.valorado)
+    "matriz_incidencia": adj_para_incid(grafo.matriz, False, grafo.valorado),
+    "AGM_Prim": prim(grafo.matriz, grafo.valorado),
+    "AGM_Kruskal": kruskal(grafo.matriz, grafo.valorado)
   }
   
   return res
