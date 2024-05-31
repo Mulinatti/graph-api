@@ -8,6 +8,8 @@ from Functions.calcular_graus import calcular_graus
 from Functions.adj_para_incid import adj_para_incid
 from Functions.verifica_grafo_regular import verifica_grafo_regular
 from Functions.bipartido import verifica_grafo_bipartido
+from Functions.prim import prim
+from Functions.kruskal import kruskal
 
 app = FastAPI()
 
@@ -42,6 +44,8 @@ async def get_grafo(grafo: Request):
     "matriz_incidencia": adj_para_incid(grafo.matriz, False, grafo.valorado),
     "bipartido": verifica_grafo_bipartido(grafo.matriz, False, grafo.valorado),
     "verifica_grafo_regular": verifica_grafo_regular(grafo.matriz, False, grafo.valorado)
+    "AGM_Prim": prim(grafo.matriz, grafo.valorado),
+    "AGM_Kruskal": kruskal(grafo.matriz, grafo.valorado)
   }
   
   return res
