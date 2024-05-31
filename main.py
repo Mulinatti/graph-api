@@ -6,6 +6,8 @@ from typing import List
 from Functions.contar_arestas import contar_arestas
 from Functions.calcular_graus import calcular_graus
 from Functions.adj_para_incid import adj_para_incid
+from Functions.verifica_grafo_regular import verifica_grafo_regular
+from Functions.bipartido import verifica_grafo_bipartido
 from Functions.prim import prim
 from Functions.kruskal import kruskal
 
@@ -40,6 +42,8 @@ async def get_grafo(grafo: Request):
     "num_arestas": contar_arestas(grafo.matriz, False, grafo.valorado),
     "graus_vertices": calcular_graus(grafo.matriz, False),
     "matriz_incidencia": adj_para_incid(grafo.matriz, False, grafo.valorado),
+    "bipartido": verifica_grafo_bipartido(grafo.matriz, False, grafo.valorado),
+    "verifica_grafo_regular": verifica_grafo_regular(grafo.matriz, False, grafo.valorado)
     "AGM_Prim": prim(grafo.matriz, grafo.valorado),
     "AGM_Kruskal": kruskal(grafo.matriz, grafo.valorado)
   }
@@ -54,7 +58,9 @@ async def get_grafo(digrafo: Request):
     "num_vertices": len(digrafo.matriz),
     "num_arestas": contar_arestas(digrafo.matriz, True, digrafo.valorado),
     "graus_vertices": calcular_graus(digrafo.matriz, True),
-    "matriz_incidencia": adj_para_incid(digrafo.matriz, True, False)
+    "matriz_incidencia": adj_para_incid(digrafo.matriz, True, False),
+    "bipartido": verifica_grafo_bipartido(digrafo.matriz, True, False),
+    "verifica_grafo_regular": verifica_grafo_regular(digrafo.matriz, True, False)
   }
   
   return res
